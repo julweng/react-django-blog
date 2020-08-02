@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import { usePostsValue } from "context"
+import { Navigation } from "components"
 import "./Posts.css"
 
 export const Posts = () => {
@@ -23,6 +24,7 @@ export const Posts = () => {
 					</Card>
 				</Row>
 			))}
+      <Navigation />
 		</Container>
 	)
 }

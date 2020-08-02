@@ -5,14 +5,24 @@ import { usePosts } from "hooks"
 export const PostsContext = createContext()
 
 export const PostsProvider = ({ children }) => {
-	const { posts, isLoaded, error } = usePosts()
+	const {
+		posts,
+		navigation,
+		isLoaded,
+		error,
+		activePage,
+		setActivePage
+	} = usePosts()
 
 	return (
 		<PostsContext.Provider
 			value={{
 				posts,
+				navigation,
 				isLoaded,
-				error
+				error,
+				activePage,
+				setActivePage
 			}}
 		>
 			{children}
