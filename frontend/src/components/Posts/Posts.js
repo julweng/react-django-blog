@@ -1,39 +1,28 @@
 import React from "react"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import { usePostsValue } from "context"
+import "./Posts.css"
 
 export const Posts = () => {
 	const { posts } = usePostsValue()
 
 	return (
-		<>
+		<Container>
 			{posts.map(post => (
 				<Row key={post.id}>
-					<Card
-						style={{
-							width: "100%",
-							margin: "10px"
-						}}
-					>
+					<Card>
 						<Card.Body>
-							<Card.Title style={{ fontSize: "40px" }}>{post.title}</Card.Title>
+							<Card.Title>{post.title}</Card.Title>
 							<Card.Text>{post.content}</Card.Text>
 							<Card.Text>Written by {post.author}</Card.Text>
-							<Button
-								variant="primary"
-								style={{
-									backgroundColor: "darkgreen",
-									border: "darkgreen 1px solid"
-								}}
-							>
-								Read More
-							</Button>
+							<Button variant="primary">Read More</Button>
 						</Card.Body>
 					</Card>
 				</Row>
 			))}
-		</>
+		</Container>
 	)
 }

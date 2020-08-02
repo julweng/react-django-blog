@@ -1,20 +1,15 @@
 import React from "react"
-import Container from "react-bootstrap/Container"
 import { PostsProvider } from "context"
 import { ErrorMessage, LoadMessage, Posts } from "components"
+import "./App.css"
 
 const App = () => {
 	return (
 		<PostsProvider>
-			<Container>
-				<ErrorMessage />
-				<LoadMessage />
-				<h1 style={{ textAlign: "center", paddingTop: "10px" }}>
-					Welcome To The Blog!
-				</h1>
-
-				<Posts />
-			</Container>
+			<ErrorMessage />
+			<LoadMessage />
+			<h1>Welcome To The Blog!</h1>
+			<Posts />
 		</PostsProvider>
 	)
 }

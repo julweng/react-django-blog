@@ -1,0 +1,19 @@
+.card {
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.card-title {
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: rgb(91, 169, 241);
+  color: #fff;
+  border: rgb(91, 169, 241) 1px solid;
+  border-radius: .25rem;
+  padding: .5rem;
+  margin-top: .5rem;
+  cursor: pointer;
+}
