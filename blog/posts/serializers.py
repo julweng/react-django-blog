@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from posts.models import Post
 
 
-class UserSerializer(serializers.ModelSerializer):
-  posts = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+  posts = serializers.HyperlinkedRelatedField(many=True, view_name='post-detail', read_only=True)
   owner = serializers.ReadOnlyField(source='owner.username')
   
   class Meta:
@@ -12,11 +12,12 @@ class UserSerializer(serializers.ModelSerializer):
     fields = ['id', 'username', 'posts', 'owner']
 
 
-class PostSerializer(serializers.ModelSerializer):
-  
+class PostSerializer(serializers.HyperlinkedModelSerializer):
+  owner = serializers.ReadOnlyField(source='owner.username')
+
   class Meta:
     model = Post
-    fields = ['id', 'title', 'content', 'author']
+    fields = ['url', 'owner', 'id', 'title', 'content', 'author']
 
   def create(self, validated_data):
     return Post.objects.create(**validated_data)
