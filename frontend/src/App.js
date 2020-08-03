@@ -1,16 +1,18 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { IndividualPostProvider, PostsProvider } from "context"
-import { ErrorMessage, LoadMessage, Posts } from "components"
-import "./App.css"
+import { IndividualPost, Posts } from "components"
 
 const App = () => {
 	return (
 		<PostsProvider>
 			<IndividualPostProvider>
-				<ErrorMessage />
-				<LoadMessage />
-				<h1>Welcome To The Blog!</h1>
-				<Posts />
+				<Router>
+					<Switch>
+						<Route exact path="/" component={Posts} />
+						<Route exact path="/posts/:postId" component={IndividualPost} />
+					</Switch>
+				</Router>
 			</IndividualPostProvider>
 		</PostsProvider>
 	)
