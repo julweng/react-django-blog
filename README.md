@@ -11,7 +11,8 @@ This is created based on the [Django REST Framework Tutorial](https://www.youtub
 
 ## How to start the app
 - clone the git repo
-- in the terminal, navigate to the `/blog` directory and start the virtual environment by `python3 -m venv env`
+- in the terminal, navigate to the project directory and start the virtual environment by `python3 -m venv env`, then `source env/bin/activate`
+- go into the `/blog` directory and `python manage.py runserver`
 - start the server by `python manage.py runserver`
 - open another terminal and navigate to the `/frontend` directory and `yarn install`
 - start the app by `yarn start`
