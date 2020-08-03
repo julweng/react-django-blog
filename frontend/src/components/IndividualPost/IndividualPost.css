@@ -1,0 +1,18 @@
+.individual-post__container.container > h1,
+.individual-post__container > h4 {
+	text-align: center;
+}
+
+.individual-post__container.container > h1 {
+  margin: 1rem;
+}
+
+.individual-post__container.container > h4 {
+  color: rgb(30, 117, 247);
+	font-style: italic;
+}
+
+.individual-post__container.container > p,
+.individual-post__container.container > a {
+	margin: 1rem;
+}
