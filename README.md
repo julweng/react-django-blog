@@ -16,6 +16,7 @@ This is created based on the [Django REST Framework Tutorial](https://www.youtub
 - start the server by `python manage.py runserver`
 - open another terminal and navigate to the `/frontend` directory and `yarn install`
 - start the app by `yarn start`
+- the app can be accessed from `localhost:3000`
 
 ## Technology
 - HTML5
